@@ -93,6 +93,11 @@ p {
   }
 }
 
+[role="group"] {
+  max-width:          $paragraph-width;
+  margin:             1em auto;
+}
+
 article[role="article"] {
 
  header {
@@ -167,5 +172,46 @@ footer {
   margin:           3em auto 1em auto;
   padding:          1em 2em;
 }
+
+
+
+a[role="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  font-size:          0.85rem;
+  display:            inline-block;
+  padding:            0.5em 0.75em;
+  margin:             0.25rem 0;
+  border:             none;
+  background:         $litegray;
+  text-align:         center;
+  text-decoration:    none;
+  color:              $emphasis-text-color;
+  letter-spacing:     0.0625rem;
+  text-transform:     uppercase;
+  cursor:             pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

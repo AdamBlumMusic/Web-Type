@@ -71,6 +71,10 @@ p {
         max-width: 37.5rem;
         margin: 1em auto; } }
 
+[role="group"] {
+  max-width: 50rem;
+  margin: 1em auto; }
+
 article[role="article"] header {
   text-align: center;
   margin-bottom: 3em; }
@@ -119,3 +123,20 @@ footer {
   max-width: 50rem;
   margin: 3em auto 1em auto;
   padding: 1em 2em; }
+
+a[role="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  font-size: 0.85rem;
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  margin: 0.25rem 0;
+  border: none;
+  background: #f6f6f6;
+  text-align: center;
+  text-decoration: none;
+  color: #222222;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  cursor: pointer; }
