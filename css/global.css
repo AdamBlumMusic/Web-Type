@@ -132,11 +132,17 @@ button {
   display: inline-block;
   padding: 0.5em 0.75em;
   margin: 0.25rem 0;
-  border: none;
+  border: 0.0625rem solid transparent;
   background: #f6f6f6;
   text-align: center;
   text-decoration: none;
   color: #222222;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out; }
+  a[role="button"]:hover,
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  button:hover {
+    border-color: #666666; }

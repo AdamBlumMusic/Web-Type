@@ -183,7 +183,7 @@ button {
   display:            inline-block;
   padding:            0.5em 0.75em;
   margin:             0.25rem 0;
-  border:             none;
+  border:             0.0625rem solid transparent;
   background:         $litegray;
   text-align:         center;
   text-decoration:    none;
@@ -191,6 +191,10 @@ button {
   letter-spacing:     0.0625rem;
   text-transform:     uppercase;
   cursor:             pointer;
+  transition:         border-color 0.2s ease-in-out;
+    &:hover {
+      border-color:  $gray;
+    }
 }
 
 
