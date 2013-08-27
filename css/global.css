@@ -97,3 +97,6 @@ q::before {
   content: "\201C"; }
 q::after {
   content: "\201D"; }
+
+code {
+  color: #5bc8a4; }

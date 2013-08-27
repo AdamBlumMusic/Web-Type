@@ -26,6 +26,7 @@ $body-text-color:        #444;      // lorem
 $heading-text-color:     #222;      // lorem
 $blockquote-text-color:  $gray;     // lorem
 $note-text-color:        $gray;     // lorem
+$code-color:             $green;    // lorem
 
 
 body {
@@ -139,7 +140,9 @@ q {
   }
 }
 
-
+code {
+  color:  $code-color;
+}
 
 
 
