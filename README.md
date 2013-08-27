@@ -1,3 +1,3 @@
 # Web Type
 
-Web Type is a simple project showing clear, readable typography to be used on the web.
+A simple project for semantic and readable typography to use on the web.
