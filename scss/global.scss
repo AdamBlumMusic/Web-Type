@@ -265,7 +265,8 @@ q {
   }
 }
 
-code {
+code, pre {
+  font-family:  monospace;
   color:  $code-color;
 }
 

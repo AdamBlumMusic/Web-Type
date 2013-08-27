@@ -173,7 +173,8 @@ q::before {
 q::after {
   content: "\201D"; }
 
-code {
+code, pre {
+  font-family: monospace;
   color: #222222; }
 
 abbr {
