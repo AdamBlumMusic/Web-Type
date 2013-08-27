@@ -99,4 +99,13 @@ q::after {
   content: "\201D"; }
 
 code {
-  color: #5bc8a4; }
+  color: #222222; }
+
+abbr {
+  border-bottom: 0.0625rem dotted #222222;
+  color: #222222;
+  cursor: help; }
+
+ul, ol {
+  max-width: 50rem;
+  margin: 1em auto; }

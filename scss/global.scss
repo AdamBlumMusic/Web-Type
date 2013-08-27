@@ -24,9 +24,10 @@ $line-height:            1.6;       // lorem
 $linkcolor:              $blue;     // lorem
 $body-text-color:        #444;      // lorem
 $heading-text-color:     #222;      // lorem
+$emphasis-text-color:    #222;      // lorem
 $blockquote-text-color:  $gray;     // lorem
 $note-text-color:        $gray;     // lorem
-$code-color:             $green;    // lorem
+$code-color:             $emphasis-text-color;    // lorem
 
 
 body {
@@ -144,11 +145,18 @@ code {
   color:  $code-color;
 }
 
+abbr {
+  border-bottom:    0.0625rem dotted $emphasis-text-color;
+  color:            $emphasis-text-color;
+  cursor:           help;
+}
 
 
 
-
-
+ul, ol {
+  max-width:        $paragraph-width;
+  margin:           1em auto;
+}
 
 
 
