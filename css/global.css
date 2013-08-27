@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Fenix';
+  src: url("http://s.cdpn.io/29719/fenix-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  padding: 5vw;
+  font-family: "Fenix", Georgia, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #444444; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  margin: 1em auto 0.25em auto;
+  max-width: 50rem; }
+
+h1 {
+  font-size: 4.0625rem; }
+
+h2 {
+  font-size: 3.25rem; }
+
+h3 {
+  font-size: 2.5625rem; }
+
+h4 {
+  font-size: 2rem; }
+
+h5 {
+  font-size: 1.5625rem; }
+
+h6 {
+  font-size: 1.25rem; }
+
+p {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: justify; }
+  p + p {
+    margin-top: 1.5em; }
+  p[role="note"] {
+    font-size: 0.85rem;
+    -moz-column-count: 2;
+    -moz-column-gap: 1em;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 1em; }
+    @media screen and (max-width: 48rem) {
+      p[role="note"] {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        max-width: 37.5rem;
+        margin: 1em auto; } }
+
+article[role="article"] header {
+  text-align: center;
+  margin-bottom: 3em; }
+  article[role="article"] header h1, article[role="article"] header h2, article[role="article"] header h3, article[role="article"] header h4, article[role="article"] header h5, article[role="article"] header h6 {
+    margin: 0 auto; }
+article[role="article"] > p:first-of-type {
+  font-size: 1.25em;
+  margin-bottom: 1em; }
+  article[role="article"] > p:first-of-type:first-letter {
+    font-size: 2em;
+    line-height: 0; }
+
+a[role="link"] {
+  text-decoration: none;
+  border-bottom: 0.0625rem dotted #2c90c6;
+  color: #2c90c6; }
+  a[role="link"]:hover, a[role="link"]:focus {
+    border-style: solid; }
