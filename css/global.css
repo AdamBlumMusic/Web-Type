@@ -7,6 +7,9 @@
 /*
   ======== Variables ========
 */
+*, *::before, *::after {
+  box-sizing: border-box !important; }
+
 body {
   padding: 5vw;
   font-family: "Fenix", Georgia,  sans-serif;
@@ -109,3 +112,10 @@ abbr {
 ul, ol {
   max-width: 50rem;
   margin: 1em auto; }
+
+footer {
+  font-size: 85%;
+  background: #f6f6f6;
+  max-width: 50rem;
+  margin: 3em auto 1em auto;
+  padding: 1em 2em; }

@@ -16,6 +16,7 @@ $orange:                 #F09D09;   // lorem
 $yellow:                 #e3c800;   // lorem
 $red:                    #eb5448;   // lorem
 $gray:                   #666666;   // lorem
+$litegray:               #f6f6f6;   // lorem
 
 $paragraph-width:        50rem;     // how wide paragraphs should be 
 $font-size:              1.25rem;   // lorem
@@ -29,6 +30,7 @@ $blockquote-text-color:  $gray;     // lorem
 $note-text-color:        $gray;     // lorem
 $code-color:             $emphasis-text-color;    // lorem
 
+*, *::before, *::after {box-sizing: border-box !important;}
 
 body {
  padding:       5vw;                // keep padding relative to viewport size
@@ -158,5 +160,12 @@ ul, ol {
   margin:           1em auto;
 }
 
+footer {
+  font-size:        85%;
+  background:       $litegray;
+  max-width:        $paragraph-width;
+  margin:           3em auto 1em auto;
+  padding:          1em 2em;
+}
 
 
