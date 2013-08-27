@@ -12,7 +12,7 @@ body {
   color: #444444; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: black;
+  color: #222222;
   margin: 1em auto 0.25em auto;
   max-width: 50rem;
   font-weight: normal; }
@@ -38,10 +38,16 @@ h6 {
 p {
   max-width: 50rem;
   margin: 0 auto;
-  text-align: justify; }
+  text-align: justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto; }
   p + p {
     margin-top: 1.5em; }
   p[role="note"] {
+    color: #666666;
     font-size: 0.85rem;
     -moz-column-count: 2;
     -moz-column-gap: 1em;
@@ -68,7 +74,13 @@ article[role="article"] > p:first-of-type {
 
 a[role="link"] {
   text-decoration: none;
+  border: none;
   border-bottom: 0.0625rem dotted #2c90c6;
   color: #2c90c6; }
   a[role="link"]:hover, a[role="link"]:focus {
-    border-style: solid; }
+    border-bottom-style: solid; }
+
+blockquote {
+  max-width: 42.5rem;
+  margin: 1em auto;
+  color: #666666; }

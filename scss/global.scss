@@ -7,20 +7,26 @@
 $red:        #eb5448;   $blue:	           	 #2c90c6;
 $green:	     #5BC8A4;   $orange:	           #F09D09;
 $yellow:	   #e3c800;   $red:		             #eb5448;
-$dark:       #444;      $bodycolor:          $dark;
 $linkcolor:  $blue;     $paragraph-width:    50rem;
 $font-size:  1.25rem;   $line-height:        1.6;
+$gray:  #666666;
+
+$body-text-color:  #444;
+$heading-text-color:  #222;
+$blockquote-text-color:  $gray;
+$note-text-color:  $gray;
+
 
 body {
  padding:  5vw; // keep padding relative to viewport size
  font-family:  "Fenix", Georgia, sans-serif; // provide fallback fonts for browsers that don't support @font-face
  font-size:  1.25rem; // make font size larger for better readability
  line-height:  1.6; // increase line height for better readability
- color:  $bodycolor; // make text color slightly lighter than pure black
+ color:  $body-text-color; // make text color slightly lighter than pure black
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:  black; // make headers stand out from body text
+  color:  $heading-text-color; // make headers stand out from body text
 	margin:  1em auto 0.25em auto; // add relative margin to top and bottom of each heading
 	max-width:  $paragraph-width; // keep headings within width of paragraph
   font-weight:  normal; // ensure font is not bold
@@ -34,14 +40,21 @@ h5 {font-size:  1.5625rem;}
 h6 {font-size:  1.25rem;}
 
 p {
- max-width:  $paragraph-width; // keep paragraphs at certain width for readability
- margin:  0 auto; // equal margins on left and right
- text-align:  justify; // justify text for readability
+  max-width:  $paragraph-width; // keep paragraphs at certain width for readability
+  margin:  0 auto; // equal margins on left and right
+  text-align:  justify; // justify text for readability
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+
   & + & {
    margin-top:  1.5em; // add top margin to consecutive paragraphs
   }
 
   &[role="note"] {
+    color:  $note-text-color;
 		font-size:  0.85rem;
 		-moz-column-count: 2; 
 		-moz-column-gap: 1em; 
@@ -79,9 +92,35 @@ article[role="article"] {
 
 a[role="link"] {
   text-decoration:  none;
+  border:  none;
 	border-bottom: 0.0625rem dotted $linkcolor;
 	color: $linkcolor;
 	&:hover, &:focus {
-		border-style:  solid;
+		border-bottom-style:  solid;
 	}
 }
+
+
+
+
+
+
+
+blockquote {
+  max-width:  $paragraph-width * 0.85;
+  margin:  1em auto;
+  color:  $blockquote-text-color;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
