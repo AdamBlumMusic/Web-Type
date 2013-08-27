@@ -30,7 +30,12 @@ $blockquote-text-color:  $gray;     // lorem
 $note-text-color:        $gray;     // lorem
 $code-color:             $emphasis-text-color;    // lorem
 
-*, *::before, *::after {box-sizing: border-box !important;}
+*, *::before, *::after {
+  box-sizing:       border-box !important;
+  &:focus {
+    outline:        none;
+  }
+}
 
 body {
  padding:       5vw;                // keep padding relative to viewport size

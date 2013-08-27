@@ -9,6 +9,8 @@
 */
 *, *::before, *::after {
   box-sizing: border-box !important; }
+  *:focus, *::before:focus, *::after:focus {
+    outline: none; }
 
 body {
   padding: 5vw;
