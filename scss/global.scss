@@ -12,18 +12,18 @@ $linkcolor:  $blue;     $paragraph-width:    50rem;
 $font-size:  1.25rem;   $line-height:        1.6;
 
 body {
- padding:  5vw;
- font-family:  "Fenix", Georgia, sans-serif;
- font-size:  1.25rem;
- line-height:  1.6;
- color:  $bodycolor;
+ padding:  5vw; // keep padding relative to viewport size
+ font-family:  "Fenix", Georgia, sans-serif; // provide fallback fonts for browsers that don't support @font-face
+ font-size:  1.25rem; // make font size larger for better readability
+ line-height:  1.6; // increase line height for better readability
+ color:  $bodycolor; // make text color slightly lighter than pure black
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:  black;
-	margin:  1em auto 0.25em auto;
-	max-width:  $paragraph-width;
-  font-weight:  normal;
+  color:  black; // make headers stand out from body text
+	margin:  1em auto 0.25em auto; // add relative margin to top and bottom of each heading
+	max-width:  $paragraph-width; // keep headings within width of paragraph
+  font-weight:  normal; // ensure font is not bold
 }
 
 h1 {font-size:  4.0625rem;}
@@ -34,11 +34,11 @@ h5 {font-size:  1.5625rem;}
 h6 {font-size:  1.25rem;}
 
 p {
- max-width:  $paragraph-width;
- margin:  0 auto;
- text-align:  justify;
+ max-width:  $paragraph-width; // keep paragraphs at certain width for readability
+ margin:  0 auto; // equal margins on left and right
+ text-align:  justify; // justify text for readability
   & + & {
-   margin-top:  1.5em; 
+   margin-top:  1.5em; // add top margin to consecutive paragraphs
   }
 
   &[role="note"] {
