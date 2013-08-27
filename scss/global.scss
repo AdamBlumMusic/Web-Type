@@ -6,7 +6,7 @@
 
 
 /*
-  Variables
+  ======== Variables ========
 */
 
 $red:                    #eb5448;   // lorem
@@ -128,7 +128,16 @@ blockquote {
   color:                  $blockquote-text-color;
 }
 
+q {
 
+  &::before {
+    content:              "\201C";
+  }
+
+  &::after {
+    content:              "\201D";
+  }
+}
 
 
 

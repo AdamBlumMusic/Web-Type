@@ -5,7 +5,7 @@
   font-style: normal; }
 
 /*
-  Variables
+  ======== Variables ========
 */
 body {
   padding: 5vw;
@@ -92,3 +92,8 @@ blockquote {
   max-width: 42.5rem;
   margin: 1em auto;
   color: #666666; }
+
+q::before {
+  content: "\201C"; }
+q::after {
+  content: "\201D"; }
