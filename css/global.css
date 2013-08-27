@@ -4,14 +4,22 @@
   font-weight: normal;
   font-style: normal; }
 
+/*
+  Variables
+*/
 body {
   padding: 5vw;
-  font-family: "Fenix", Georgia, sans-serif;
+  font-family: "Fenix", Georgia,  sans-serif;
   font-size: 1.25rem;
   line-height: 1.6;
   color: #444444; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #222222;
   margin: 1em auto 0.25em auto;
   max-width: 50rem;
