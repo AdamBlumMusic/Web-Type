@@ -1,8 +1,73 @@
 @font-face {
-  font-family: 'Fenix';
-  src: url("../font/fenix.woff") format("woff");
+  font-family: 'merriweather-regular';
+  src: url("../font/merriweather-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+
+@font-face {
+  font-family: 'merriweather-italic';
+  src: url("../font/merriweather-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'merriweather-bold';
+  src: url("../font/merriweather-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'merriweather-bolditalic';
+  src: url("../font/merriweather-bolditalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'merriweather-black';
+  src: url("../font/merriweather-black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'merriweather-heavyitalic';
+  src: url("../font/merriweather-heavyitalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'merriweather-light';
+  src: url("../font/merriweather-light.woff") format("woff");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'merriweather-lightitalic';
+  src: url("../font/merriweather-lightitalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic; }
+
+h1, h2, h3, h4 {
+  font-family: 'merriweather-bold';
+  font-weight: 700;
+  font-style: normal; }
+
+p[role="note"] {
+  font-family: 'merriweather-light';
+  font-weight: 200;
+  font-style: normal; }
+
+a[role="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  font-family: 'merriweather-regular';
+  font-weight: 400;
+  font-style: normal; }
+
+h5, h6 {
+  font-family: 'merriweather-italic';
+  font-weight: 400;
+  font-style: italic; }
 
 /*
   ======== Variables ========
@@ -14,9 +79,9 @@
 
 body {
   padding: 5vw;
-  font-family: "Fenix", Georgia,  sans-serif;
+  font-family: "merriweather-regular", Georgia,  sans-serif;
   font-size: 1.25rem;
-  line-height: 1.6;
+  line-height: 1.75;
   color: #444444; }
 
 h1,
@@ -61,7 +126,7 @@ p {
     margin-top: 1.5em; }
   p[role="note"] {
     color: #666666;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     -moz-column-count: 2;
     -moz-column-gap: 1em;
     -webkit-column-count: 2;
@@ -86,6 +151,7 @@ article[role="article"] > p:first-of-type {
   font-size: 1.25em;
   margin-bottom: 1em; }
   article[role="article"] > p:first-of-type:first-letter {
+    margin-right: -0.1em;
     font-size: 2em;
     line-height: 0; }
 
@@ -130,17 +196,17 @@ a[role="button"],
 input[type="submit"],
 input[type="reset"],
 button {
-  font-size: 0.85rem;
+  font-size: 1.125em;
   display: inline-block;
   padding: 0.5em 0.75em;
   margin: 0.25rem 0;
   border: 0.0625rem solid transparent;
   background: #f6f6f6;
+  border-radius: 0.125em;
   text-align: center;
   text-decoration: none;
   color: #222222;
   letter-spacing: 0.0625rem;
-  text-transform: uppercase;
   cursor: pointer;
   transition: border-color 0.2s ease-in-out; }
   a[role="button"]:hover, a[role="button"]:focus,

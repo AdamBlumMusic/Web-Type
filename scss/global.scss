@@ -1,8 +1,107 @@
 @font-face {
-    font-family: 'Fenix';
-    src: url('../font/fenix.woff') format('woff');
-    font-weight: normal;    font-style: normal;
+    font-family: 'merriweather-regular';
+    src: url('../font/merriweather-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'merriweather-italic';
+    src: url('../font/merriweather-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-bold';
+    src: url('../font/merriweather-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-bolditalic';
+    src: url('../font/merriweather-bolditalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-black';
+    src: url('../font/merriweather-black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-heavyitalic';
+    src: url('../font/merriweather-heavyitalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-light';
+    src: url('../font/merriweather-light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-lightitalic';
+    src: url('../font/merriweather-lightitalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+
+%bold {
+  font-family: 'merriweather-bold';
+  font-weight: 700;   font-style: normal;
+}
+
+%bolditalic {
+  font-family: 'merriweather-bolditalic';
+  font-weight: 700;   font-style: italic;
+}
+
+%black {
+  font-family: 'merriweather-black';
+  font-weight: 900;   font-style: normal;
+}
+
+%blackitalic {
+  font-family: 'merriweather-heavyitalic';
+  font-weight: 900;   font-style: italic;
+}
+
+%lite {
+  font-family: 'merriweather-light';
+  font-weight: 200;   font-style: normal;
+}
+
+%liteitalic {
+  font-family: 'merriweather-lightitalic';
+  font-weight: 200;   font-style: italic;
+}
+
+
+%regular {
+  font-family: 'merriweather-regular';
+  font-weight: 400;   font-style: normal;
+}
+
+%italic {
+  font-family: 'merriweather-italic';
+  font-weight: 400;   font-style: italic;
+}
+
+
+
 
 
 /*
@@ -39,11 +138,11 @@ $code-color:             $emphasis-text-color;    // lorem
 
 body {
  padding:       5vw;                // keep padding relative to viewport size
- font-family:  "Fenix",
+ font-family:  "merriweather-regular",
                 Georgia, 
                 sans-serif;         // provide fallback fonts for browsers that don't support @font-face
  font-size:     1.25rem;            // make font size larger for better readability
- line-height:   1.6;                // increase line height for better readability
+ line-height:   1.75;                // increase line height for better readability
  color:         $body-text-color;   // make text color slightly lighter than pure black
 }
 
@@ -58,6 +157,17 @@ h6 {
 	max-width:    $paragraph-width;       // keep headings within width of paragraph
   font-weight:  normal;                 // ensure font is not bold
 }
+
+
+h1, h2, h3, h4 {
+  @extend %bold;
+}
+
+h5, h6 {
+  @extend %italic;
+}
+
+
 
 h1 {font-size:  4.0625rem;}
 h2 {font-size:  3.25rem;}
@@ -81,8 +191,9 @@ p {
   }
 
   &[role="note"] {
+    @extend                 %lite;
     color:                  $note-text-color;
-		font-size:              0.85rem;
+		font-size:              0.75rem;
 		-moz-column-count:      2; 
 		-moz-column-gap:        1em; 
 		-webkit-column-count:   2; 
@@ -118,7 +229,8 @@ article[role="article"] {
   & > p:first-of-type {
     font-size:         1.25em;
     margin-bottom:     1em;
-    	&:first-letter { 
+    	&:first-letter {
+         margin-right:  -0.1em;
 			   font-size:    2em;
 			   line-height:  0;
 			}
@@ -184,17 +296,19 @@ a[role="button"],
 input[type="submit"],
 input[type="reset"],
 button {
-  font-size:          0.85rem;
+  @extend             %regular;
+  font-size:          1.125em;
   display:            inline-block;
   padding:            0.5em 0.75em;
   margin:             0.25rem 0;
   border:             0.0625rem solid transparent;
   background:         $litegray;
+  border-radius:      0.125em;
   text-align:         center;
   text-decoration:    none;
   color:              $emphasis-text-color;
   letter-spacing:     0.0625rem;
-  text-transform:     uppercase;
+ // text-transform:     uppercase;
   cursor:             pointer;
   transition:         border-color 0.2s ease-in-out;
     &:hover, &:focus {
