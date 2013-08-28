@@ -250,3 +250,9 @@ figure {
       -webkit-column-count: 1;
       max-width: 37.5rem;
       margin: 1em auto; } }
+
+::selection {
+  background: rgba(44, 144, 198, 0.1); }
+
+::-moz-selection {
+  background: rgba(44, 144, 198, 0.1); }

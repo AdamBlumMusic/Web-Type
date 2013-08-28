@@ -128,6 +128,7 @@ $emphasis-text-color:    #222;      // lorem
 $blockquote-text-color:  #444;     // lorem
 $note-text-color:        $gray;     // lorem
 $code-color:             $emphasis-text-color;    // lorem
+$text-highlight-color:   rgba($blue, 0.1);
 
 *, *::before, *::after {
   box-sizing:       border-box !important;
@@ -355,6 +356,14 @@ background:  $litegray;
 }
 
 
+
+
+::selection {
+  background: $text-highlight-color;
+}
+::-moz-selection {
+  background: $text-highlight-color;
+}
 
 
 
