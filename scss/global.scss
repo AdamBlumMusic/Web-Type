@@ -189,24 +189,6 @@ p {
   & + & {
    margin-top:      1.5em;              // add top margin to consecutive paragraphs
   }
-
-  &[role="note"] {
-    @extend                 %lite;
-    color:                  $note-text-color;
-		font-size:              0.75rem;
-		-moz-column-count:      2; 
-		-moz-column-gap:        1em; 
-		-webkit-column-count:   2; 
-		-webkit-column-gap:     1em;
-
-    		@media screen and (max-width:  48rem) {
-			    -moz-column-count:     1;
-    			-webkit-column-count:  1;
-		     	max-width:             $paragraph-width * 0.75;
-    			margin:                1em auto;
-		    }
-
-  }
 }
 
 [role="group"] {
@@ -215,6 +197,7 @@ p {
 }
 
 article[role="article"] {
+  counter-reset: figure;
 
  header {
    text-align:      center; 
@@ -254,7 +237,7 @@ code, pre {
 }
 
 blockquote {
-  @extend                 %italic;
+  @extend                 %liteitalic;
   max-width:              $paragraph-width * 0.85;
   margin:                 1em auto;
   color:                  $blockquote-text-color;
@@ -264,15 +247,18 @@ blockquote {
 q {
 
   &::before {
-    content:              "\201C";
+    content:    "\201C";
   }
 
   &::after {
-    content:              "\201D";
+    content:    "\201D";
   }
 }
 
-
+small {
+  color:                  $note-text-color;
+  font-size:              0.75rem;
+}
 
 abbr {
   border-bottom:    0.0625rem dotted $emphasis-text-color;
@@ -293,6 +279,9 @@ footer {
   max-width:        $paragraph-width;
   margin:           3em auto 1em auto;
   padding:          1em 2em;
+    p {
+      margin: 0 auto;
+    }
 }
 
 
@@ -323,11 +312,46 @@ button {
 
 
 
+img {
+  max-width:  100%;
+}
 
 
+figure {
+
+max-width:  $paragraph-width * 0.85;
+margin:  2em auto;
+padding:  1em;
+background:  $litegray;
 
 
+  figcaption {
+    font-size:              1.125rem;
+    &:before {
+      counter-increment: figure;
+      content:  "Figure " counter(figure) ": ";
+      opacity:  0.5;
+    }
+  }
+}
 
+[role="note"] {
+  @extend                 %lite;
+  color:                  $note-text-color;
+  font-size:              0.75rem;
+  -moz-column-count:      2; 
+  -moz-column-gap:        1em; 
+  -webkit-column-count:   2; 
+  -webkit-column-gap:     1em;
+
+      @media screen and (max-width:  48rem) {
+        -moz-column-count:     1;
+        -webkit-column-count:  1;
+        max-width:             $paragraph-width * 0.75;
+        margin:                1em auto;
+      }
+
+}
 
 
 
