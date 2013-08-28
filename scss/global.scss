@@ -248,10 +248,17 @@ a[role="link"] {
 	}
 }
 
+code, pre {
+  font-family:  monospace;
+  color:  $code-color;
+}
+
 blockquote {
+  @extend                 %italic;
   max-width:              $paragraph-width * 0.85;
   margin:                 1em auto;
   color:                  $blockquote-text-color;
+    & code, & q {font-style:  normal;}   // make code snippets and double quotes not italic
 }
 
 q {
@@ -265,10 +272,7 @@ q {
   }
 }
 
-code, pre {
-  font-family:  monospace;
-  color:  $code-color;
-}
+
 
 abbr {
   border-bottom:    0.0625rem dotted $emphasis-text-color;

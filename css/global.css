@@ -64,7 +64,7 @@ button {
   font-weight: 400;
   font-style: normal; }
 
-h5, h6 {
+h5, h6, blockquote {
   font-family: 'merriweather-italic';
   font-weight: 400;
   font-style: italic; }
@@ -163,19 +163,21 @@ a[role="link"] {
   a[role="link"]:hover, a[role="link"]:focus {
     border-bottom-style: solid; }
 
+code, pre {
+  font-family: monospace;
+  color: #222222; }
+
 blockquote {
   max-width: 42.5rem;
   margin: 1em auto;
   color: #666666; }
+  blockquote code, blockquote q {
+    font-style: normal; }
 
 q::before {
   content: "\201C"; }
 q::after {
   content: "\201D"; }
-
-code, pre {
-  font-family: monospace;
-  color: #222222; }
 
 abbr {
   border-bottom: 0.0625rem dotted #222222;
