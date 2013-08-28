@@ -163,8 +163,9 @@ code, pre {
 
 blockquote {
   max-width: 42.5rem;
+  font-size: 1rem;
   margin: 1em auto;
-  color: #666666; }
+  color: #444444; }
   blockquote code, blockquote q {
     font-style: normal; }
 

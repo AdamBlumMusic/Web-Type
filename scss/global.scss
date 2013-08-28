@@ -125,7 +125,7 @@ $linkcolor:              $blue;     // lorem
 $body-text-color:        #444;      // lorem
 $heading-text-color:     #222;      // lorem
 $emphasis-text-color:    #222;      // lorem
-$blockquote-text-color:  $gray;     // lorem
+$blockquote-text-color:  #444;     // lorem
 $note-text-color:        $gray;     // lorem
 $code-color:             $emphasis-text-color;    // lorem
 
@@ -239,6 +239,7 @@ code, pre {
 blockquote {
   @extend                 %liteitalic;
   max-width:              $paragraph-width * 0.85;
+  font-size:              1rem;
   margin:                 1em auto;
   color:                  $blockquote-text-color;
     & code, & q {font-style:  normal;}   // make code snippets and double quotes not italic
