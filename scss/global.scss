@@ -1,8 +1,107 @@
 @font-face {
-    font-family: 'Fenix';
-    src: url('../font/fenix.woff') format('woff');
-    font-weight: normal;    font-style: normal;
+    font-family: 'merriweather-regular';
+    src: url('../font/merriweather-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+    font-family: 'merriweather-italic';
+    src: url('../font/merriweather-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-bold';
+    src: url('../font/merriweather-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-bolditalic';
+    src: url('../font/merriweather-bolditalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-black';
+    src: url('../font/merriweather-black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-heavyitalic';
+    src: url('../font/merriweather-heavyitalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'merriweather-light';
+    src: url('../font/merriweather-light.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'merriweather-lightitalic';
+    src: url('../font/merriweather-lightitalic.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+
+%bold {
+  font-family: 'merriweather-bold';
+  font-weight: 700;   font-style: normal;
+}
+
+%bolditalic {
+  font-family: 'merriweather-bolditalic';
+  font-weight: 700;   font-style: italic;
+}
+
+%black {
+  font-family: 'merriweather-black';
+  font-weight: 900;   font-style: normal;
+}
+
+%blackitalic {
+  font-family: 'merriweather-heavyitalic';
+  font-weight: 900;   font-style: italic;
+}
+
+%lite {
+  font-family: 'merriweather-light';
+  font-weight: 200;   font-style: normal;
+}
+
+%liteitalic {
+  font-family: 'merriweather-lightitalic';
+  font-weight: 200;   font-style: italic;
+}
+
+
+%regular {
+  font-family: 'merriweather-regular';
+  font-weight: 400;   font-style: normal;
+}
+
+%italic {
+  font-family: 'merriweather-italic';
+  font-weight: 400;   font-style: italic;
+}
+
+
+
 
 
 /*
@@ -16,6 +115,7 @@ $orange:                 #F09D09;   // lorem
 $yellow:                 #e3c800;   // lorem
 $red:                    #eb5448;   // lorem
 $gray:                   #666666;   // lorem
+$litegray:               #f6f6f6;   // lorem
 
 $paragraph-width:        50rem;     // how wide paragraphs should be 
 $font-size:              1.25rem;   // lorem
@@ -24,17 +124,26 @@ $line-height:            1.6;       // lorem
 $linkcolor:              $blue;     // lorem
 $body-text-color:        #444;      // lorem
 $heading-text-color:     #222;      // lorem
-$blockquote-text-color:  $gray;     // lorem
+$emphasis-text-color:    #222;      // lorem
+$blockquote-text-color:  #444;     // lorem
 $note-text-color:        $gray;     // lorem
+$code-color:             $emphasis-text-color;    // lorem
+$text-highlight-color:   rgba($blue, 0.1);
 
+*, *::before, *::after {
+  box-sizing:       border-box !important;
+  &:focus {
+    outline:        none;
+  }
+}
 
 body {
  padding:       5vw;                // keep padding relative to viewport size
- font-family:  "Fenix",
+ font-family:  "merriweather-regular",
                 Georgia, 
                 sans-serif;         // provide fallback fonts for browsers that don't support @font-face
  font-size:     1.25rem;            // make font size larger for better readability
- line-height:   1.6;                // increase line height for better readability
+ line-height:   1.75;                // increase line height for better readability
  color:         $body-text-color;   // make text color slightly lighter than pure black
 }
 
@@ -45,10 +154,21 @@ h4,
 h5,
 h6 {
   color:        $heading-text-color;    // make headers stand out from body text
-	margin:       1em auto 0.25em auto;   // add relative margin to top and bottom of each heading
-	max-width:    $paragraph-width;       // keep headings within width of paragraph
+  margin:       1em auto 0.25em auto;   // add relative margin to top and bottom of each heading
+  max-width:    $paragraph-width;       // keep headings within width of paragraph
   font-weight:  normal;                 // ensure font is not bold
 }
+
+
+h1, h2, h3, h4 {
+  @extend %bold;
+}
+
+h5, h6 {
+  @extend %italic;
+}
+
+
 
 h1 {font-size:  4.0625rem;}
 h2 {font-size:  3.25rem;}
@@ -70,26 +190,15 @@ p {
   & + & {
    margin-top:      1.5em;              // add top margin to consecutive paragraphs
   }
+}
 
-  &[role="note"] {
-    color:                  $note-text-color;
-		font-size:              0.85rem;
-		-moz-column-count:      2; 
-		-moz-column-gap:        1em; 
-		-webkit-column-count:   2; 
-		-webkit-column-gap:     1em;
-
-    		@media screen and (max-width:  48rem) {
-			    -moz-column-count:     1;
-    			-webkit-column-count:  1;
-		     	max-width:             $paragraph-width * 0.75;
-    			margin:                1em auto;
-		    }
-
-  }
+[role="group"] {
+  max-width:          $paragraph-width;
+  margin:             1em auto;
 }
 
 article[role="article"] {
+  counter-reset: figure;
 
  header {
    text-align:      center; 
@@ -104,10 +213,11 @@ article[role="article"] {
   & > p:first-of-type {
     font-size:         1.25em;
     margin-bottom:     1em;
-    	&:first-letter { 
-			   font-size:    2em;
-			   line-height:  0;
-			}
+      &:first-letter {
+         margin-right:  -0.1em;
+         font-size:    2em;
+         line-height:  0;
+      }
   }
 
 }
@@ -115,29 +225,147 @@ article[role="article"] {
 a[role="link"] {
   text-decoration:        none;
   border:                 none;
-	border-bottom:          0.0625rem dotted $linkcolor;
-	color:                  $linkcolor;
-	&:hover, &:focus {
-		border-bottom-style:  solid;
-	}
+  border-bottom:          0.0625rem dotted $linkcolor;
+  color:                  $linkcolor;
+  &:hover, &:focus {
+    border-bottom-style:  solid;
+  }
+}
+
+code, pre {
+  font-family:  monospace;
+  color:  $code-color;
 }
 
 blockquote {
+  @extend                 %liteitalic;
   max-width:              $paragraph-width * 0.85;
+  font-size:              1rem;
   margin:                 1em auto;
   color:                  $blockquote-text-color;
+    & code, & q {font-style:  normal;}   // make code snippets and double quotes not italic
 }
 
 q {
 
   &::before {
-    content:              "\201C";
+    content:    "\201C";
   }
 
   &::after {
-    content:              "\201D";
+    content:    "\201D";
   }
 }
+
+small {
+  color:                  $note-text-color;
+  font-size:              0.75rem;
+}
+
+abbr {
+  border-bottom:    0.0625rem dotted $emphasis-text-color;
+  color:            $emphasis-text-color;
+  cursor:           help;
+}
+
+
+
+ul, ol {
+  max-width:        $paragraph-width;
+  margin:           1em auto;
+}
+
+footer {
+  font-size:        85%;
+  background:       $litegray;
+  max-width:        $paragraph-width;
+  margin:           3em auto 1em auto;
+  padding:          1em 2em;
+    p {
+      margin: 0 auto;
+    }
+}
+
+
+
+a[role="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  @extend             %regular;
+  font-size:          1.125em;
+  display:            inline-block;
+  padding:            0.5em 0.75em;
+  margin:             0.25rem 0;
+  border:             0.0625rem solid transparent;
+  background:         $litegray;
+  border-radius:      0.125em;
+  text-align:         center;
+  text-decoration:    none;
+  color:              $emphasis-text-color;
+  letter-spacing:     0.0625rem;
+ // text-transform:     uppercase;
+  cursor:             pointer;
+  transition:         border-color 0.2s ease-in-out;
+    &:hover, &:focus {
+      border-color:  $gray;
+    }
+}
+
+
+
+img {
+  max-width:  100%;
+}
+
+
+figure {
+
+max-width:  $paragraph-width * 0.85;
+margin:  2em auto;
+padding:  1em;
+background:  $litegray;
+
+
+  figcaption {
+    font-size:              1.125rem;
+    &:before {
+      counter-increment: figure;
+      content:  "Figure " counter(figure) ": ";
+      opacity:  0.5;
+    }
+  }
+}
+
+[role="note"] {
+  @extend                 %lite;
+  color:                  $note-text-color;
+  font-size:              0.75rem;
+  -moz-column-count:      2; 
+  -moz-column-gap:        1em; 
+  -webkit-column-count:   2; 
+  -webkit-column-gap:     1em;
+
+      @media screen and (max-width:  48rem) {
+        -moz-column-count:     1;
+        -webkit-column-count:  1;
+        max-width:             $paragraph-width * 0.75;
+        margin:                1em auto;
+      }
+
+}
+
+
+
+
+::selection {
+  background: $text-highlight-color;
+}
+::-moz-selection {
+  background: $text-highlight-color;
+}
+
+
 
 
 
